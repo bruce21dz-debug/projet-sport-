@@ -1,0 +1,171 @@
+/* Base et Réinitialisation */
+* {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    
+    color: #333;
+    box-sizing: border-box;
+}
+
+/* --- Barre de Navigation --- */
+.header {
+    background-color: #0056b3; /* Bleu foncé */
+    padding: 15px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #ddd;
+    
+}
+
+.nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-left: 10px;
+    transition: background-color 0.3s;
+}
+
+.nav a:hover {
+    background-color: #004494;
+}
+
+.primary-btn {
+    background-color: #ffcc00; /* Bouton mis en évidence */
+    color: #0056b3 !important;
+    font-weight: bold;
+}
+.primary-btn:hover {
+    background-color: #e6b800;
+}
+
+/* --- Diaporama (Carousel) --- */
+.diaporama-container {
+    padding: 40px 0;
+    text-align: center;
+    overflow: hidden; /* Cache les articles non affichés */
+    background-color: white;
+    border-bottom: 1px solid #ddd;
+}
+
+.diaporama-container h2 {
+    color: #0056b3;
+    margin-bottom: 30px;
+}
+
+/* Conteneur de défilement (doit être plus large que le diaporama-container) */
+.carousel-wrapper {
+    display: flex; /* Met les deux articles côte à côte */
+    width: 200%; /* Important : 100% * nombre d'articles (2 * 100% = 200%) */
+    animation: slide-show 8s infinite ease-in-out; /* Application de l'animation */
+}
+
+.diaporama-item {
+    flex: 0 0 50%; /* Chaque article prend exactement 50% de la largeur du wrapper */
+    display: flex;
+    align-items: center;
+    text-align: left;
+    padding: 0 50px;
+}
+
+.diaporama-item img {
+    width: 40%;
+    height: auto;
+    max-height: 250px;
+    object-fit: cover;
+    margin-right: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.item-content {
+    width: 60%;
+}
+
+/* Bouton pour les articles */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+
+
+
+
+
+/* --- Définition de l'Animation CSS (Le "Move") --- */
+@keyframes slide-show {
+    /* 0% à 40% : Afficher le premier article (décalage 0%) */
+    0%, 40% {
+        transform: translateX(0);
+    }
+    /* 50% à 90% : Décaler à gauche pour afficher le deuxième article (décalage -50%) */
+    50%, 90% {
+        transform: translateX(-50%);
+    }
+    /* 100% : Revenir au début pour recommencer l'animation */
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* --- Contenu de la Page (Juste pour la visualisation) --- */
+.page-content {
+    padding: 50px;
+    text-align: center;
+    margin-top: 15px;
+
+
+}
+
+/* 3. PIED DE PAGE (CONTACT) */
+/* Styles pour la Section Contact */
+.contact{
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    margin-top: 150px;
+}
+a {
+    
+    text-decoration: none;
+    font-size: 12px;
+
+
+}
+
+
+
+.contact a:hover {
+    color: #ff6600;
+
+
+}
+
+
+/* RESPONSIVE de base (pour les petits écrans/mobiles) */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 15px 20px;
+    }
+    
+ 
+
+    .photo-grid {
+        grid-template-columns: 1fr; /* Une seule colonne sur mobile */
+    }
+}
+
